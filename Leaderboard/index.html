@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard von Niklaas.python und LuMa_369</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="/static/main.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/static/image.png">
+</head>
+<body>
+    <div id="leaderboard-container">
+        <div id="leaderboard">
+            Loading...
+        </div>
+    </div>
+
+    <div id="control-panel">
+        <div class="box2" display="flex" style="text-align: center;">
+            <h1 style="font-size: 1.5em; text-align: center; margin-top: 0; margin-bottom: 0;">- – — Dashboard — – -</h1>
+            <small>Made by Niklaas.python and LuMa_369</small>
+        </div>
+        <h2 style="font-size: 1.0em; text-align: center; margin-top: 0;">– — View Controller — –</h2>
+        <div class="box">
+            <small><i>(Achtung Flashbang)</i></small>
+            <a href="?obs"><button class="btn-ex">Zu OBS View wechseln</button></a>
+            <br>
+            <button class="btn-ex" onclick="BlendInOut()">Leaderboard ein/aus Blenden</button>
+        </div>
+        <h2 style="font-size: 1.0em; text-align: center; margin-top: 0;">– — Points Editor — –</h2>
+        <div class="box">
+            <select name="Names" id="Dropdown" style="border-radius: 5px; padding: 5px; border: solid; background-color: #3a3a42; color: white; min-width: 100%; border-color: #ffffff; border-width: 1px;">
+                    <option value="arong">Arongforce</option>
+                    <option value="luma">LuMa_369</option>
+                    <option value="zitrone">Zitrone_2010</option>
+                    <option value="blacksource">Blacksource</option>
+                    <option value="kai">Kaiomatiko</option>
+                    <option value="solaris">Solaris</option>
+                    <option value="void">Void</option>
+            </select>
+            <hr>
+            <div style="display: flex; gap: 5px; margin-top: 10px;">
+                <button onclick="AddPoint(1)" class="btn-gray" id="PlusOne">+1</button>
+                <button onclick="AddPoint(2)" class="btn-gray" id="PlusTwo">+2</button>
+                <button onclick="AddPoint(3)" class="btn-gray" id="PlusThree">+3</button>
+                <button onclick="AddPoint(6)" class="btn-gray" id="PlusSix">+6</button>
+                <button onclick="AddPoint(9)" class="btn-gold" id="PlusNine">+9</button>
+            </div>
+            <div style="display: flex; gap: 5px;">
+                <button onclick="AddPoint(-1)" class="btn-gray" id="MinusOne">-1</button>
+                <button onclick="AddPoint(-2)" class="btn-gray" id="MinusTwo">-2</button>
+                <button onclick="AddPoint(-3)" class="btn-gray" id="MinusThree">-3</button>
+                <button onclick="AddPoint(-6)" class="btn-gray" id="MinusSix">-6</button>
+                <button onclick="AddPoint(-9)" class="btn-red" id="MinusNine">-9</button>
+            </div><br>
+            <div class="box2">
+                <form onsubmit="event.preventDefault();">
+                    <input type="number" id="CustomPTInput" placeholder="Custom Points"><br>
+                    <button type="button" class="btn-gray" id="CustomPTBtn" onclick="handleManualAdd()">Add</button>
+                </form>
+            </div>
+            <hr>
+            <button class="del-btn" onclick="Clear()" id="resetPoints">Reset</button>    
+        </div>
+
+        <h2 title="Nur für Debugging und Testen sowie Reparieren von desync Fehlern und Server Fehlern (Wie Speicher Fehler)" style="font-size: 1.0em; text-align: center; margin-top: 0;">– — Debugging & Testing — –</h2>
+        <div class="box">
+            <button title="If Data is not Properly Loaded/Send or you just need to send an API Call to the Server this Button can do that!" class="btn-cool" onclick="ResendData()">Resend Data</button>
+            <button title="Resets All Data for all Clients and the Server! (Use carefully!)" class="btn-cool" onclick="ResetAll()">Reset All</button>
+        </div>
+    </div>
+    <div id="Test" style="display: none; color: rgb(0, 183, 255);">
+    </div>
+</body>
+</html>
